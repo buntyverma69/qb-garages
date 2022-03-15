@@ -18,11 +18,11 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetGarageVehicles", function(s
             if result[1] then
                 --Check vehicle type against depot type
                 for k, vehicle in pairs(result) do
-                    if category == "air" and ( QBCore.Shared.Vehicles[vehicle.vehicle].category == "helicopters" or QBCore.Shared.Vehicles[vehicle.vehicle].category == "planes" ) then
+                    if category == "air" and ( QBCore.Shared.Vehicles[vehicle.vehicle].category == "helis" or QBCore.Shared.Vehicles[vehicle.vehicle].category == "planes" ) then
                         tosend[#tosend + 1] = vehicle
                     elseif category == "sea" and QBCore.Shared.Vehicles[vehicle.vehicle].category == "boats" then
                         tosend[#tosend + 1] = vehicle
-                    elseif category == "car" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "helicopters" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "planes" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "boats" then
+                    elseif category == "car" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "helis" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "planes" and QBCore.Shared.Vehicles[vehicle.vehicle].category ~= "boats" then
                         tosend[#tosend + 1] = vehicle
                     end
                 end
